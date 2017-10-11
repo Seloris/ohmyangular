@@ -15,7 +15,7 @@ export class EventListComponent implements OnInit {
         this.eventList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
             return {
                 id: i + '',
-                name: 'Nom' + i,
+                name: 'Event N°' + i,
                 description: 'La description de l\'event' + i,
                 percentage: i * 10
             };

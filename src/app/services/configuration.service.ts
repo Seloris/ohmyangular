@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Rx';
 export class ConfigurationService {
   public load(): Promise<boolean> {
     return new Promise(resolve =>
-      setTimeout(() => resolve(true), 5000)
+      setTimeout(() => resolve(true), 1000)
     );
   }
 }
