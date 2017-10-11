@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { EventComponent } from './event.component';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { EventComponent } from './event.component';
     EventCardComponent,
     EventComponent,
     SuffixPipe,
-    PercentageDirective],
+    PercentageDirective,
+    AddEventComponent],
   providers: [
     CanActivateNever,
     CanActivateAlways
