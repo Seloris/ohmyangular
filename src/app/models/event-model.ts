@@ -1,5 +1,5 @@
 export interface EventModel {
-    id: string;
+    id: number;
     name: string;
     description: string;
     percentage: number;
