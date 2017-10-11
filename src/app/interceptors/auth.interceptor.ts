@@ -10,8 +10,7 @@ export class AutInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const duplicate = req.clone({ params: req.params.set('filter', 'completed') });
-
+    const duplicate = req.clone({ headers: req.headers.set('Authorization', 'Bearer coucou') });
     return next.handle(duplicate);
   }
 }
