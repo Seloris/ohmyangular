@@ -1,3 +1,4 @@
+import { EventsService } from './../../services/events.service';
 import { CreateEventModel } from './../../models/event-model';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
 export class AddEventComponent implements OnInit {
 
     public createEvent: CreateEventModel = {};
-    
-    constructor() { }
+    public isDebug: boolean;
+
+    constructor(private eventsService: EventsService) { }
 
     ngOnInit() {
     }
 
+    toggleDebug() {
+        this.isDebug = !this.isDebug;
+    }
+
+    onSubmit() {
+        this.eventsService.postEvent(this.createEvent).subscribe(() => {
+            alert('OK');
+        });
+    }
 }

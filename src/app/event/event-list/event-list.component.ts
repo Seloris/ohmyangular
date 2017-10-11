@@ -13,6 +13,11 @@ export class EventListComponent implements OnInit {
     constructor(private eventsService: EventsService) { }
 
     ngOnInit() {
-      this.eventsService.GetFromApi().subscribe(list => this.eventList = list);
+        this.eventsService.getFromApi().subscribe(list => this.eventList = list);
+    }
+
+    onClickCard(event: EventModel) {
+        console.log(event);
+        alert('click on ' + event.name);
     }
 }

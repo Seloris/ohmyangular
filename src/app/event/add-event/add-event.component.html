@@ -1,16 +1,26 @@
 <div class="container">
-    <form>
+    <form #myForm="ngForm" (submit)="onSubmit()">
         <fieldset>
             <legend>LE FORMULAIRE QUI TUE</legend>
             <div class="form-group">
                 <label>Nom</label>
-                <input placeholder="Nom" [(ngModel)]="createEvent.name" />
+                <input required #nameControl="ngModel" placeholder="Nom" [(ngModel)]="createEvent.name" name="nom" />
+                <pre *ngIf="nameControl.errors && isDebug">{{nameControl.errors | json}}</pre>
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <input placeholder="Description" [(ngModel)]="createEvent.description" />
+                <input required placeholder="Description" [(ngModel)]="createEvent.description" name="description" />
             </div>
-            <button>GO</button>
+            <br />
+            <button [disabled]="!myForm.valid" type="submit">GO BOY</button>
         </fieldset>
     </form>
+    <button (click)="toggleDebug()">Toggle Debug Mode</button>
+    <div class="debug" *ngIf="isDebug">
+        <h3>myForm.value</h3>
+        <pre>{{myForm.value | json}}</pre>
+        <hr />
+        <h3>createEvent</h3>
+        <pre>{{createEvent | json}}</pre>
+    </div>
 </div>

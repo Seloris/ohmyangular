@@ -1,3 +1,4 @@
+import { EventsService } from './../services/events.service';
 import { CanActivateAlways, CanActivateNever } from './../guards/aut.guards';
 import { routing } from './event.routing';
 import { FormsModule } from '@angular/forms';
