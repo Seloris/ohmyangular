@@ -12,4 +12,8 @@ export class EventsService {
   GetFromApi(): Observable<EventModel[]> {
     return this.http.get<EventModel[]>(`${environment.apiUrl}/api/values`);
   }
+
+  PostEvent(event: EventModel): Observable<void> {
+    return this.http.post<void>(`${environment.apiUrl}/api/values`, event)
+  }
 }

@@ -1,3 +1,4 @@
+import { EventModel } from './models/event-model';
 import { Component } from '@angular/core';
 import { EventsService } from './services/events.service';
 
@@ -8,11 +9,4 @@ import { EventsService } from './services/events.service';
 })
 export class AppComponent {
     title = 'app works!';
-
-    constructor(private eventsService: EventsService) {
-        this.eventsService.GetFromApi().subscribe(
-            events => console.log(events),
-            err => console.log(err)
-        );
-    }
 }
