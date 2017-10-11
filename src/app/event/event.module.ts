@@ -18,6 +18,6 @@ import { EventComponent } from './event.component';
         EventComponent,
         SuffixPipe,
         PercentageDirective],
-    exports: [EventComponent]
+    exports: [EventListComponent]
 })
 export class EventModule { }
