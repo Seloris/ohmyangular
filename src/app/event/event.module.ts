@@ -1,3 +1,4 @@
+import { CanActivateAlways, CanActivateNever } from './../guards/aut.guards';
 import { routing } from './event.routing';
 import { FormsModule } from '@angular/forms';
 import { PercentageDirective } from './../directives/percentage-color.directive';
@@ -9,17 +10,21 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { EventComponent } from './event.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        routing
-    ],
-    declarations: [
-        EventListComponent,
-        EventCardComponent,
-        EventComponent,
-        SuffixPipe,
-        PercentageDirective],
-    exports: []
+  imports: [
+    CommonModule,
+    FormsModule,
+    routing
+  ],
+  declarations: [
+    EventListComponent,
+    EventCardComponent,
+    EventComponent,
+    SuffixPipe,
+    PercentageDirective],
+  exports: [EventListComponent],
+  providers: [
+    CanActivateNever,
+    CanActivateAlways
+  ]
 })
 export class EventModule { }
