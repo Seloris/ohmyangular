@@ -1,3 +1,4 @@
+import { routing } from './app.routing';
 import { EventsService } from './services/events.service';
 import { EventModule } from './event/event.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    EventModule
+    EventModule,
+    routing
   ],
   providers: [EventsService, { provide: HTTP_INTERCEPTORS, useClass: AutInterceptor, multi: true }],
   bootstrap: [AppComponent]
