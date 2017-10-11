@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AutInterceptor } from './interceptors/auth.interceptor';
 import { AppComponent } from './app.component';
+import { SuffixPipe } from './pipes/suffix.pipe';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
