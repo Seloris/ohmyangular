@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-event-list',
     templateUrl: './event-list.component.html',
-    styleUrls: ['./event-list.component.css']
+    styleUrls: ['./event-list.component.scss']
 })
 export class EventListComponent implements OnInit {
     public eventList: EventModel[];
@@ -12,7 +12,13 @@ export class EventListComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        this.eventList = [
-        ];
+        this.eventList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
+            return {
+                id: i + '',
+                name: 'Nom' + i,
+                description: 'La description de l\'event' + i,
+                percentage: i * 10
+            };
+        });
     }
 }

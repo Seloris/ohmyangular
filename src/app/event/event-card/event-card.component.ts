@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { EventModel } from './../../models/event-model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-event-card',
-  templateUrl: './event-card.component.html',
-  styleUrls: ['./event-card.component.css']
+    selector: 'app-event-card',
+    templateUrl: './event-card.component.html',
+    styleUrls: ['./event-card.component.scss']
 })
 export class EventCardComponent implements OnInit {
 
-  constructor() { }
+    @Input() event: EventModel;
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnInit() {
+    }
 
 }
