@@ -5,9 +5,10 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { EventComponent } from './event.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [EventListComponent, EventCardComponent, EventComponent]
+    imports: [
+        CommonModule
+    ],
+    declarations: [EventListComponent, EventCardComponent, EventComponent],
+    exports: [EventComponent]
 })
 export class EventModule { }
