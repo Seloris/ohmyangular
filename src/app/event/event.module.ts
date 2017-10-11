@@ -20,6 +20,6 @@ import { EventComponent } from './event.component';
         EventComponent,
         SuffixPipe,
         PercentageDirective],
-    exports: [EventComponent]
+    exports: []
 })
 export class EventModule { }

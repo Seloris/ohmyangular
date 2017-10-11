@@ -1,3 +1,7 @@
-<div class="percentage" appPercentageColor [percentage]="event.percentage">{{event.percentage | suffix:'%'}}</div>
-<div class="title">{{event.name}}</div>
-<div class="description">{{event.description}}</div>
+<div class="card">
+    <div class="percentage" appPercentageColor [percentage]="event.percentage">{{event.percentage | suffix:'%'}}</div>
+    <div class="bottom">
+        <div class="title">{{event.name}}</div>
+        <div class="description">{{event.description}}</div>
+    </div>
+</div>
