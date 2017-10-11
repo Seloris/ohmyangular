@@ -1,3 +1,4 @@
+import { EventsService } from './../../services/events.service';
 import { EventModel } from './../../models/event-model';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,16 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class EventListComponent implements OnInit {
     public eventList: EventModel[];
 
-    constructor() { }
+    constructor(private eventsService: EventsService) { }
 
     ngOnInit() {
-        this.eventList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
-            return {
-                id: i,
-                name: 'Nom' + i,
-                description: 'La description de l\'event' + i,
-                percentage: i * 10
-            };
-        });
+      this.eventsService.GetFromApi().subscribe(list => this.eventList = list);
     }
 }

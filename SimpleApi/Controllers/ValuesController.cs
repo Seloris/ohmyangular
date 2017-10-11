@@ -24,7 +24,7 @@ namespace SimpleApi.Controllers
         }
 
     [HttpPost]
-    public IActionResult Post(Event eventModel)
+    public IActionResult Post([FromBody]Event eventModel)
     {
       var bearer = this.Request.Headers["Authorization"];
       if (bearer.Count == 0 || bearer[0].Contains("old_token"))
@@ -32,8 +32,9 @@ namespace SimpleApi.Controllers
         HttpContext.Response.HttpContext.Features.Get<IHttpResponseFeature>().ReasonPhrase = "Expired token";
         return Unauthorized();
       }
+      eventModel.Id = Data.Events.Select(x => x.Id).Max() + 1;
       Data.Events.Add(eventModel);
-      return Ok(bool);
+      return Ok(true);
     }
   }
 }
