@@ -1,19 +1,14 @@
+import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
+import { Event } from '../models/event';
 
 @Injectable()
 export class EventsService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  GetFromApi() {
-    this.http.get('localhost:5000/api/value')
-      .map(x => x.json())
-      .subscribe(
-        data => console.log('ok'),
-        err => console.log(err)
-      );
+  GetFromApi(): Observable<Event[]> {
+    return this.http.get<Event[]>('http://localhost:5000/api/values');
   }
 }
