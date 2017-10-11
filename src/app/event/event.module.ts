@@ -21,7 +21,6 @@ import { EventComponent } from './event.component';
     EventComponent,
     SuffixPipe,
     PercentageDirective],
-  exports: [EventListComponent],
   providers: [
     CanActivateNever,
     CanActivateAlways
