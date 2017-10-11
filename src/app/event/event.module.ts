@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { PercentageDirective } from './../directives/percentage-color.directive';
 import { SuffixPipe } from './../pipes/suffix.pipe';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { EventComponent } from './event.component';
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule
     ],
     declarations: [
         EventListComponent,
