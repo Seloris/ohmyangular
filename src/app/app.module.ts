@@ -12,7 +12,7 @@ import { SuffixPipe } from './pipes/suffix.pipe';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
-const configurationInit =  (config: ConfigurationService) => () => config.load();
+export const configurationInit =  (config: ConfigurationService) => () => config.load();
 
 @NgModule({
   declarations: [
