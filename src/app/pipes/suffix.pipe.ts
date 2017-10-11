@@ -1,12 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'suffix'
+    name: 'suffix'
 })
 export class SuffixPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
-  }
-
+    transform(value: string, suffix: string = ''): any {
+        return `${value}${suffix}`;
+    }
 }
