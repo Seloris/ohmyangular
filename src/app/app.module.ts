@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AutInterceptor } from './interceptors/auth.interceptor';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AppComponent } from './app.component';
 import { SuffixPipe } from './pipes/suffix.pipe';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -30,7 +30,7 @@ export const configurationInit =  (config: ConfigurationService) => () => config
     ConfigurationService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AutInterceptor,
+      useClass: AuthInterceptor,
       multi: true
     },
     {
